@@ -1,0 +1,17 @@
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\bin\Debug\net6.0-windows\LautaroFSQL.exe
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\bin\Debug\net6.0-windows\LautaroFSQL.deps.json
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\bin\Debug\net6.0-windows\LautaroFSQL.runtimeconfig.json
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\bin\Debug\net6.0-windows\LautaroFSQL.dll
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\bin\Debug\net6.0-windows\LautaroFSQL.pdb
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\LautaroFSQL.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\LautaroFSQL.Form1.resources
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\LautaroFSQL.csproj.GenerateResource.cache
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\LautaroFSQL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\LautaroFSQL.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\LautaroFSQL.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\LautaroFSQL.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\LautaroFSQL.dll
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\refint\LautaroFSQL.dll
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\LautaroFSQL.pdb
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\LautaroFSQL.genruntimeconfig.cache
+C:\Users\Lenovo\source\repos\LautaroFSQL\LautaroFSQL\obj\Debug\net6.0-windows\ref\LautaroFSQL.dll
