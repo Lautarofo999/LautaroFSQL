@@ -21,7 +21,7 @@ namespace ClassLibrary1.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ClassLibrary1.Cliente", b =>
+            modelBuilder.Entity("ClassLibrary1.Clientes", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -29,12 +29,12 @@ namespace ClassLibrary1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
-                    b.Property<int>("DNI")
-                        .HasColumnType("int");
-
                     b.Property<string>("apellido")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("dni")
+                        .HasColumnType("int");
 
                     b.Property<string>("nombre")
                         .IsRequired()
@@ -45,7 +45,7 @@ namespace ClassLibrary1.Migrations
                     b.ToTable("Clientes");
                 });
 
-            modelBuilder.Entity("ClassLibrary1.Cuenta_Bancaria", b =>
+            modelBuilder.Entity("ClassLibrary1.Cuenta_Bancarias", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
@@ -65,7 +65,7 @@ namespace ClassLibrary1.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Cuenta_Bancarias");
+                    b.ToTable("Cuentas_Bancarias");
                 });
 
             modelBuilder.Entity("ClassLibrary1.Tarjeta_de_Crédito", b =>

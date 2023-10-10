@@ -10,14 +10,15 @@ namespace ClassLibrary1
     {
         ApplicationDbContext context = new ApplicationDbContext();
 
-        public void AgregarCliente(Cliente cliente)
+        public void AgregarCliente(Clientes cliente)
         {
             context.Clientes.Add(cliente);
             context.SaveChanges();
+
         }
-        public void CrearCuentaBancaria(Cuenta_Bancaria cuenta)
+        public void CrearCuentaBancaria(Cuenta_Bancarias cuenta)
         {
-            context.Cuenta_Bancarias.Add(cuenta);
+            context.Cuentas_Bancarias.Add(cuenta);
             context.SaveChanges();
         }
 
@@ -35,9 +36,27 @@ namespace ClassLibrary1
                 context.SaveChanges();
             }
         }
+        public void BloquearTarjetaCredito(int tarjetaId)
+        {
+            var tarjeta = context.Tarjeta_De_Creditos.Find(tarjetaId);
+            if (tarjeta != null)
+            {
+                tarjeta.estado = "Bloqueada";
+                context.SaveChanges();
+            }
+        }
+        public void ActivarTarjetaCredito (int tarjetaId)
+        {
+            var tarjeta = context.Tarjeta_De_Creditos.Find(tarjetaId);
+            if (tarjeta != null)
+            {
+                tarjeta.estado = "Activa";
+                context.SaveChanges();
+            }
+        }
         public void RealizarDeposito(int cuentaId, double monto)
         {
-            var cuenta = context.Cuenta_Bancarias.Find(cuentaId);
+            var cuenta = context.Cuentas_Bancarias.Find(cuentaId);
             if (cuenta != null)
             {
                 cuenta.saldo += monto;
@@ -46,7 +65,7 @@ namespace ClassLibrary1
         }
         public void RealizarExtraccion(int cuentaId, double monto)
         {
-            var cuenta = context.Cuenta_Bancarias.Find(cuentaId);
+            var cuenta = context.Cuentas_Bancarias.Find(cuentaId);
             if (cuenta != null && cuenta.saldo >= monto)
             {
                 cuenta.saldo -= monto;
@@ -55,8 +74,8 @@ namespace ClassLibrary1
         }
         public void RealizarTransferencia(int cuentaOrigenId, int cuentaDestinoId, double monto)
         {
-            var cuentaOrigen = context.Cuenta_Bancarias.Find(cuentaOrigenId);
-            var cuentaDestino = context.Cuenta_Bancarias.Find(cuentaDestinoId);
+            var cuentaOrigen = context.Cuentas_Bancarias.Find(cuentaOrigenId);
+            var cuentaDestino = context.Cuentas_Bancarias.Find(cuentaDestinoId);
 
             if (cuentaOrigen != null && cuentaDestino != null && (cuentaOrigen.saldo >= monto))
             {
@@ -65,7 +84,7 @@ namespace ClassLibrary1
                 context.SaveChanges();
             }
         }
-        public void PagarTarjetaCredito(int tarjetaId, double monto)
+        public bool PagarTarjetaCredito(int tarjetaId, double monto)
         {
             var tarjeta = context.Tarjeta_De_Creditos.Find(tarjetaId);
             if (tarjeta != null && tarjeta.estado == "Activa")
@@ -74,20 +93,38 @@ namespace ClassLibrary1
                 {
                     tarjeta.montoDeuda -= monto;
                     context.SaveChanges();
+                    return true;
                 }
                 else
                 {
-                    Console.WriteLine("El pago supera la deuda actual de la tarjeta.");
+                    return false;
                 }
             }
+            else { return false; }
+        
         }
-        public void GenerarResumenTarjeta(Tarjeta_de_Crédito tarjeta)
+        public string GenerarResumenTarjeta(int tarjetaId)
         {
+            var resumen = context.Tarjeta_De_Creditos.Find(tarjetaId);
+            if (resumen != null)
+            {
+                return resumen.estado + "\n" + resumen.saldoDisponible + "\n" + resumen.montoDeuda + "\n" + resumen.limiteCredito;
 
-            Console.WriteLine("Resumen de la Tarjeta de credito");
-            Console.WriteLine("Número de la Tarjeta: " + tarjeta.numeroTarjeta);
-            Console.WriteLine("Saldo Disponible: " + tarjeta.saldoDisponible);
-            Console.WriteLine("Limite del Crédito: " + tarjeta.limiteCredito);
+
+            }
+            else return "Error";
+        }
+        public List<Clientes> ListaClientes()
+        {
+            return context.Clientes.ToList();
+        }
+        public List<Cuenta_Bancarias> ListaBancaria()
+        {
+            return context.Cuentas_Bancarias.ToList();
+        }
+        public List<Tarjeta_de_Crédito> ListaTarjeta()
+        {
+            return context.Tarjeta_De_Creditos.ToList();
         }
     }
 }

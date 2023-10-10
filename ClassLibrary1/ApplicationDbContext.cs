@@ -9,8 +9,8 @@ namespace ClassLibrary1
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<Cliente> Clientes { get; set; }
-        public DbSet<Cuenta_Bancaria> Cuenta_Bancarias { get; set; }
+        public DbSet<Clientes> Clientes { get; set; }
+        public DbSet<Cuenta_Bancarias> Cuentas_Bancarias { get; set; }
         public DbSet<Tarjeta_de_Crédito> Tarjeta_De_Creditos { get; set; }
 
 
